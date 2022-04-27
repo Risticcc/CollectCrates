@@ -152,14 +152,7 @@ public class SpawnManager : MonoBehaviour
         //0 -> crvene level1
         //1 -> plave level2
         int levellIndex = cubeLevel[cubeLevel.Length - 1] - '0';
-        //meni je potreban index sleceg levela
-        //if (tiles[(NumberOfMerges - 1) % 10].Free)
-        //{
-        //    tiles[(NumberOfMerges - 1) % 10].Prefab = Instantiate(prefabs[levellIndex], tiles[(NumberOfMerges - 1) % 10].Postion, prefabs[levellIndex].transform.rotation);
-        //    tiles[(NumberOfMerges - 1) % 10].Free = false;
-        //    spanAllow = true;
-        //}
-        //else { Debug.Log("Mesto je zauzeto " + tiles[(NumberOfMerges - 1) % 10].Prefab); }
+       
         foreach(Tile tile in tiles)
         {
             if(tile.Free ==true)

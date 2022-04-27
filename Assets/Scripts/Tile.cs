@@ -20,11 +20,6 @@ public class Tile
         position = pos;
         Prefab = null;
     }
-    public void DestroyGameObject()
-    {
-        MonoBehaviour.Destroy(GameObject.Find("Cube 1(Clone)"));
-        Debug.Log(GameObject.Find("Cube 1(Clone)"));
-        
-    }
+
     
 }
