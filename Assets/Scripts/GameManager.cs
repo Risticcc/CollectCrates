@@ -8,22 +8,20 @@ using GameAnalyticsSDK;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject mainMenu;
-    public GameObject pauseMenu;
-    public GameObject playPanel;
-    public Button playButton; 
-    public Button resumeButton; 
-    public Button quitButton; 
-    public Button pauseButton;
-
-    public Text merges;
-    public Text taps;
-
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject playPanel;
+    [SerializeField] Button playButton;
+    [SerializeField] Button resumeButton;
+    [SerializeField] Button quitButton;
+    [SerializeField] Button pauseButton;
+
+    [SerializeField] Text merges;
+    [SerializeField] Text taps;
+
     private SpawnManager spawnMannager;
-
-
-    
 
     void Start()
     {
@@ -52,7 +50,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.gameObject.SetActive(false);
         playPanel.gameObject.SetActive(true);
         AnalyticsManager.analyticsManager.GameIsPlayed();
-        Debug.Log(AnalyticsManager.analyticsManager);
+        
     }
     
     public void ResumeGame()
@@ -77,7 +75,5 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-
- 
 
 }

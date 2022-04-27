@@ -14,16 +14,15 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]private int level;
     [SerializeField]private bool spanAllow;
     [SerializeField] private GameObject[] prefabs;
-    public ParticleSystem particle;
-    ParticleSystem.EmitParams particleParams;
-
-    private  int spawnedPrefabs = 0;
-    private  int numberOfMerges = 0;
-
+    [SerializeField] ParticleSystem particle;
+  
 
     private Tile[] tiles;
     private float lerpDuration = 1;
     private string cubeLevel;
+
+    private  int spawnedPrefabs = 0;
+    private  int numberOfMerges = 0;
 
     public  int SpawnedPrefabs { get => spawnedPrefabs; set=> spawnedPrefabs = value; }
     public  int NumberOfMerges { get => numberOfMerges; set => numberOfMerges = value; }
@@ -32,6 +31,7 @@ public class SpawnManager : MonoBehaviour
     {
         level = SpawnedPrefabs.ToString().Length;
     }
+
 
     private void Start()
     {
@@ -73,6 +73,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+
     public void CreateTable()
     {
 
@@ -117,8 +118,7 @@ public class SpawnManager : MonoBehaviour
     }
 
     IEnumerator Lerp(Vector3 startValue, Vector3 endValue, Tile tile)
-    {
-        
+    {    
         float timeElapsed = 0;
         while (timeElapsed < lerpDuration)
         {
@@ -126,8 +126,8 @@ public class SpawnManager : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-       
     }
+
     IEnumerator Delete(string cubeLevel)
     {
         yield return new WaitForSeconds(1);
@@ -145,6 +145,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+
     IEnumerator LevelUp(string cubeLevel)
     {
         yield return new WaitForSeconds(1);
@@ -172,7 +173,5 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-    }
- 
-    
+    }  
 }
